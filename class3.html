@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <style>
-        table,th,td{
-            border:3px solid #000000;
-            border-collapse:collapse;
-            width:70%;
-        }
-    </style>
-</head>
-<body>
-  <h1> HTML Links</h1>  
-  <p> Let's get into world of <a href="https://www.codingal.com/student/dashboard/progress-reports/"> coding</a></p>
-<br><br><br><br>
-<hr>
+<h2>JavaScript String Methods</h2>
+<p>Basic Methods</p>
+
+<br><br>
+
+<h1>JavaScript For Loops</h1>
+<p id="demo"></p>
+
+<br><br>
+
+<p id="demo1"></p>
+<script>
+    var str = "AmAzInG"
+    document.write(str.toUpperCase());
+    document.write("<br>")
+    document.write(str.toLowerCase());
+    document.write("<br>")
+    document.write(str.startsWith('i'))
+    document.write("<br>")
+
+    //Test Method ->  returns true or flase
+    var str1 = "I learnt about Methods";
+    var patt = new RegExp("about");
+    var res = patt.test(str);
+    document.write(res);
 
 
-<h1>List</h1>
-<h2> Unordered List  </h2>
-<ul>
-    <li>Home</li>
-    <li>About Us</li>
-    <li> Contact list</li>
-</ul>
-
-<h2>Ordered List </h2>
-<ol> 
-    <li>Home</li>
-    <li> About us </li>
-    <li> Contact list </li>
-</ol>
-<br><br><br><br>
-<hr>
+    var fruits = ["apple", "Mango", "Grapes",
+        "Watermelon", "Jack Fruit", "Banana"];
+    var text = "";
+    var i;
+    for (i = 0; i < fruits.length; i++) {
+        text += fruits[i] + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
 
 
+    var day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+    }
+    document.getElementById("demo1").innerHTML = "Today is" + day;
 
-<h1>Table</h1>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Grade</th>
-        <th>Age</th>
-    </tr>
-    <tr>
-        <td> Dylan </td>
-        <td>7</td>
-        <td>12</td>
-    </tr>
-    <tr>
-        <td>Luke</td>
-        <td>7</td>
-        <td>13</td>
-    </tr>
-<tr>
-    <td>jaxon</td>
-    <td>7</td>
-    <td>13</td>
-</tr>
-</table>
-</body>
+
+</script>
+
 </html>
