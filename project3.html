@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head><style>
-        table,th,td{
-            border:3px solid #000000;
-            border-collapse:collapse;
-            width:70%;
-        }
-    </style>
-</head>
-<body>
-<h1>Basketball player</h1>  
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Rank</th>
-    </tr>
-    <tr>
-        <td>Lebron James</td>
-        <td>40</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>kobe Bryant</td>
-        <td>41</td>
-        <td>9</td>
-    </tr>
-    <tr>
-        <td>Kevin Durant</td>
-        <td>37</td>
-        <td>13</td>
-    </tr>
-</table>
-</body>
+    <body>
+
+        <p id="demo1"></p>
+        <script>
+             var day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = "march 1";
+            break;
+        case 1:
+            day = "march 2";
+            break;
+        case 2:
+            day = "march 3";
+            break;
+        case 3:
+            day = "march 4";
+            break;
+        case 4:
+            day = "march 5";
+            break;
+        case 5:
+            day = "march 6";
+            break;
+        case 6:
+            day = "march 7";
+    }
+    document.getElementById("demo1").innerHTML = "Today is" + day;
+
+        </script>
+    </body>
 </html>
