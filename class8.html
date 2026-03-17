@@ -1,19 +1,74 @@
 <!DOCTYPE html>
 <html>
-   <head>
-    <style>
-        body{
-            background-image: url();
+    <body>
+        <h2>JavaScript Class</h2>
+        <p>How to use a JavaScript Class.</p>
 
-        }
-        #grad1{
-            height: 400px;
-            background-image: linear-gradient(to top right, red,orange,yellow,green,blue,aqua,teal);
-        }
-    </style>
-   </head>
-   <body>
-    Hello world
-    <div id="grad1" style="text-align: center; margin: auto;color:darkcyan;font-size:40px;font-weight:bold">welcome to coding</div>
-   </body>
+        <p id="student1"></p>
+        <p id="student2"></p>
+
+
+
+
+
+        <br><br>
+
+        <h3>JavaScript Class inheritance</h3>
+        <p>Use the "extends" keyword to inherit all mrthods fro, another class.
+        </p>
+        <p>Use the "super" method to call the parent's constructor function.</p>
+        <p id="details"></p>
+
+        <script>
+            // Creating a class
+            class Student {
+                constructor(name, year){
+                    this.name = name;
+                    this.year = year;
+                }
+
+                // Age method
+                age() {
+                    let date = new Date();
+                    return date.getFullYear() - this.year;
+                }
+            }
+
+            // Using the class with two objects
+            const student1 = new Student("Dylan", 2013);
+            document.getElementById("student1").innerHTML =
+            "My name is " + student1.name + " I was born in " + student1.year
+            + ". And my age is " + student1.age();
+
+            const student2 = new Student("vez", 1959);
+            document.getElementById("student2").innerHTML = 
+            "My name is " + student2.name + ". I was born in " + student2.year 
+            + ". And my age is " + student2.age();
+
+            class Car {
+                constructor(brand) {
+                    this.carname = brand; 
+                        
+                }
+                present() {
+                    return 'I have a ' + this.carname;
+                }
+            }
+
+
+            class Model extends Car {
+                constructor(brand, mod) {
+                    super(brand);
+                    this.model = mod;
+                }
+
+                show() {
+                    return this.present() + ', it is a ' + this.model;
+                }
+            }
+
+            let myCar = new Model("Ford", "Mustang");
+            document.getElementById("details").innerHTML = myCar.show();
+        </script>
+    </body>
 </html>
