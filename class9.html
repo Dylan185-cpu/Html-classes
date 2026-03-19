@@ -1,28 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <title>Trpography</title>
-    <style>
-
-
-.text1{
-color:red;
-
-font-size: 30px;
-}
-
-.p1{
-color:blueviolet;
-font-family: 'Courier New', Courier, monospace;
-}
-    </style>
+    <head>
+        <title>JavaScript Array Sort</title>
+    </head>
     <body>
-        <h1>Typography</h1>
-        <p class="text1">Welcome to codingal</p>
 
 
-        <p class="p1">Welcome to codingal</p>
+        <h2>JavaScript Array Sort</h2>
+
+
+        <p>Click the button to sort the array in ascending order.</p>
+
+        <button onclick="ascending()">ascending order</button>
+        <button onclick="decending()">decending order</button>
+
+        <p id="result"></p>
 
 
 
+
+
+        <br><br>
+
+
+
+        <p>Multiply every element in the array with 10:</p>
+
+        <p id="product_value"></p>
+
+        
+
+        <br><br>
+
+
+        <p>Click the button to evalute exucute JavaScript code/expressions.</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p id="result1"></p>
+        <script>
+            var points = [40, 100, 1, 5, 25, 10];
+
+            document.getElementById("result").innerHTML = points;
+
+            function ascending() {
+                points.sort(function(a, b) {
+                    return a - b;
+                });
+                 document.getElementById("result").innerHTML = points;
+            }
+
+             function decending() {
+                points.sort(function(a, b) {
+                    return b - a;
+                });
+                 document.getElementById("result").innerHTML = points;
+            }
+
+
+
+
+
+            var numbers = [28, 6, 19, 95,];
+
+            function myFunction(num) {
+                return num * 10;
+            }
+
+            var newarray = numbers.map(myFunction);
+
+            document.getElementById("product_value").innerHTML = newarray;
+
+
+            function myFunction() {
+                var x = 10;
+                var y = 20;
+
+                var a = eval("x + y") + "<br>";
+                var b = eval("2 * 2") + "<br>";
+                var c = eval("y - x") + "<br>";
+
+                var res = a + b + c; // concatenates the string
+
+                document.getElementById("result1").innerHTML = res;
+                }
+        </script>
     </body>
 </html>
