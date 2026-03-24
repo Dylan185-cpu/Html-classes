@@ -1,81 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-     <style>
-        body {
-            font-family:Arial, Helvetica, sans-serif;
-            background-color: rgb(15, 37, 45);
-            color:cornflowerblue
+    <body>
+        <h2>The javaScript String() method</h2>
 
-        }
+        <p>The String() method can convert a number to a string
+        </p>
 
-        h1 {
-            color:honeydew
-        }
-
-        a {
-            color: dimgray;
-            text-decoration: none;
-        }
-
-        a:hover{
-            color: lightslategrey;
-        }
-
-        ul > li {
-            font-weight: bold;
-        }
-
-        h1 + p {
-            background-color: rgb(26, 23, 69);
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        ul li:hover {
-            color: lawngreen;
-        }
-
-        ul li:nth-child(3) {
-            background-color: rgb(114, 18, 18);
-        }
-
-        p:not(:first-of-type) {
-            text-decoration: underline;
-        }
-
-        ul li::before {
-            content: "";
-        }
-
-        a:after {
-            content: "";
-
-        }
-
-        p::first-letter {
-            font-size: 200%;
-            color: aquamarine;
-        }
+         <p id="number_result"></p>
+        <p id="string_result"></p>
 
 
-     </style>
+        <br><br>
 
-</head>
-<body>
-    <h1>Welcome to the Space Explorer's Club</h1>
-    <ul>
-        <li>Moon Missions </li>
-        <li>Mars Rovers</li>
-        <li>International Space Station</li>
-        <li>Telescopes and Stars</li>
-        <li>Black Holes Mysteries</li>
-    </ul>
-    <p>Space exploration has always captivated human imagiation.it's a journey to the unknown</p>
-    <p>From the Moon to distant galaxies, we continue to explore the vastness of space</p>
-    <a href="#">Join our Missions</a>
-    <a href="#">Latest space news</a>
-    <a href="#">Gallery of the universe</a>
 
-</body>
+        <h1>JavaScript Error Handling</h1>
+
+        <p>This example demostrates how to use <b>catch</b> to display an error.</p>
+
+        <p id="error_message"></p>
+
+
+        <br><br>
+
+        <h3>JavaScript Arrow Function</h3>
+
+        <p>This example shows an arrow Function with a parameter</p>
+
+        <p id="result"></p>
+
+
+        <script>
+            var x = 70;
+            var y = 90;
+
+            document.getElementById("number_result").innerHTML = x + y;
+
+            document.getElementById("string_result").innerHTML = String(x) + String(y);
+            //Does not add because it is a string it concatenates
+
+
+
+            try {
+                addalert("Welcome guest!");
+            }
+            catch(err) {
+                document.getElementById("error_message").innerHTML = err.message;
+            }
+
+
+            const add = (a,b) => a + b;
+            document.getElementById("result").innerHTML = add(4,6);
+        </script>
+    </body>
 </html>
