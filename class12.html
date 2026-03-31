@@ -1,70 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            div{
-                right: 30px;
-                border: 3px solid cadetblue
+        <script>
+            function validateForm(){
+                var x = document.forms["myForm"]["fname"].value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
             }
-            div.sticky{
-                position: sticky;
-                top: 1px;
-                left: 20px;
-                width: 100px;
-                border: 3px solid cornflowerblue;
+
+            function myFunction() {
+                var inpobj =document.getElementById("id");
+                if(!inpobj.checkValidity()) {
+                document.getElementById("result").innerHTML = inpobj.validationMessage;
+            } else {
+                document.getElementById("result").innerHTML = "Input OK";
+
+           
             }
-            div.absolute{
-                position: absolute;
-                left: 50px;
-                border: 3px solid goldenrod;
-            }
-            div.relative{
-                position: relative;
-                left: 100px;
-                border: 3px solid plum;
-            }
-            div.fixed{
-                position: fixed;
-                top: 0;
-                right: 20px;
-                width: 300px;
-                border: 3px solid rebeccapurple;
-            }
-        </style>
+        } 
+        </script>
     </head>
     <body>
-        <!-- change the position to show the difference
-        static
-        relative
-        fixed
-        absolute
-        sticky-->
-        <h2>POSITIONING</h2>
-        <div>
-            Div with sticky position property
-        </div>
+        <form name="myForm" onsubmit="return validateForm()">
+            Name: <input type="text" name="fname">
+        <input type="submit" value="Submit">
+        </form>
 
-        <div class="sticky">
-            Div with sticky position property
-        </div>
+        <p id="message"></p>
 
-        <div class="relative">
-             This div element has position: relative
-             <div class="absolute">
-                Absolute Class Div
-        </div>
+        <br><br>
 
-        <div class="fixed">
-              Div with fixed position property
-        </div>
+        <h1>Activity 2</h1>
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>Enter a number and click OK:</p>
 
+        <input id="id" type=" number" min="100" max="300" required>
+
+        <button onclick="myFunction()">OK</button>
+
+        <p>If the number is less than 100 or greater than 300, an error message will be 
+        displayed.</p>
+        <p id="result"></p>
+
+        <br><br>
+
+        <div div class="calc">
+        </div class>
     </body>
 </html>
