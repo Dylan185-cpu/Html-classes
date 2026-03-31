@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <p id="result"></p>
+        <script>
+        try {
+                addalert("Welcome guest!");
+            }
+            catch(err) {
+                document.getElementById("error_message").innerHTML = err.message;
+            }
+
+
+            const add = (a,b) => a + b;
+            document.getElementById("result").innerHTML = add(4,6);</script>
+         
+    </body>
+</html>
