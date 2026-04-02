@@ -1,34 +1,43 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        .col{
-            text-align:center;
-            border:1px solid black;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-        <h3>Equal width column grid</h3>
-        <div class="row">
-            <div class="col">
-                column 1
-            </div>
-            <div class="col">
-                column 2
-            </div>
-            <div class="col">
-                column 3
-            </div>
-        </div>
-    </div>
-  </body>
+<head></head>
+
+<body>
+
+  <script>
+
+
+    var choice = prompt("welcome to Area Calculator. \n please Enter your Choice. \n1.Area of Rectangle. \n2.Area of Triangle. \n3Area of Circle. \n4.Area ofParalleogram");
+
+
+    if (choice == '1') {
+      var l = prompt('Enter the Length')
+      var b = prompt('Enter the breadth')
+      var result = Number(l) * Number(b)
+      alert('The Area is ' + result)
+    }
+
+    if (choice == '2') {
+      var h = prompt('Enter the height')
+      var b = prompt('Enter the base')
+      var result = Number(h) * Number(b) / 2
+      alert('The Area is ' + result)
+    }
+
+    if (choice == '3') {
+      var r = prompt('Enter the radius')
+      var result = 3.14 * Number(r) * Number(r)
+      alert('The Area is ' + result)
+    }
+
+    if (choice == '4') {
+      var h = prompt('Enter the radius')
+      var cb = prompt('Enter the corresponding base')
+      var result = Number(h) * Number(cb)
+      alert('The Area is ' + result)
+    }
+  </script>
+</body>
+
 </html>
