@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <script>
+            function myFunction() {
+                var inpobj =document.getElementById("id");
+                if(!inpobj.checkValidity()) {
+                document.getElementById("result").innerHTML = inpobj.validationMessage;
+            } else {
+                document.getElementById("result").innerHTML = "Input OK";
+
+           
+            }
+        } 
+         </script>
+
+    </head>
+
+    <body>
+        <p>Enter a number and click OK:</p>
+
+        <input id="id" type=" number" min="18" max="75" required>
+
+        <button onclick="myFunction()">OK</button>
+
+        <p>over 18 age to 75 age.</p>
+        <p id="result"></p>
+    </body>
+</html>
