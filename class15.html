@@ -1,82 +1,38 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3> Add your to do list here</h3>
+        <form id="myForm">
+            <input id="myInput" type="text">
+            <button>Add</button>
+        </form>
 
-<head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <h3>To Do List</h3>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+        <ul id="myItem"></ul>
 
-<body style="text-align: center;">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 style="color: orange;">
-                Codingal
-            </h1>
+        <script>
 
+            var myForm = document.getElementById("myForm");
+            var myInput = document.getElementById("myInput");
+            var myItem = document.getElementById("myItem");
 
-            <p>Codingal will help you fall in love with codingal</p>
-        </div>
-    </div>
+            myForm.addEventListener("submit",function(event){
+                event.preventDefault();
+                createItem(myInput.value)
+            })
 
+            function createItem(inputItems){
+                var items = `<li>${inputItems}
+                    <button onclick="deleteElement(this)">Delete</button> </li>`
+                        myItem.insertAdjacentHTML("beforeend", items)
+                        myInput.value = ""
+                        myInput.focus()
+            }
 
-    <div>
-
-        <h2>Buttons</h2>
-
-
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-secondary">Secondary</button>
-        <button type="button" class="btn btn-success">Success</button>
-        <button type="button" class="btn btn-warning">Warning</button>
-        <button type="button" class="btn btn-danger">Danger</button>
-    </div>
-
-    <br><br>
-
-
-    <div class="jumbotron">
-        <h1>Contextual Badges</h1>
-    </div>
-    <div class="container">
-        <h2>messages<span class="badge badge-primary">2</span></h2>
-        <h3>calls<span class="badge badge-secondary">5</span></h3>
-        <h4 class="bg-secondary">notifications<span class="badge badge-success">3</span></h4>
-        <h5 class="bg-primary">request<span class="badge badge-danger">7</span></h5>
-        <h6>emails<span class="badge badge-warning">11</span></h6>
-        
-
-    </div>
-
-
-    <br><br>
-
-
-
-    <div class="jumbotron">
-        <h1>Progress bar</h1>
-
-    </div>
-
-
-    <div class="container">
-        <p>To create a progress bar, add a .progress bar, add a .progress class to a container element
-            and add the progress-bar class to its child element. Use the CSS width property to
-            set the width of the progress bar</p>
-            <div class="progress">
-                <div class="progress-bar" style="width:70%">70%</div>
-                </div>
-            </div>
-    </div>
-
-
-
-
-</body>
-
+            function deleteElement(ElementToDelete){
+                ElemntToDelete.parentElement.remove()
+            }
+        </script>
+    </body>
 </html>
