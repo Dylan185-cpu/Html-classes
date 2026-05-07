@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number App</title>
+</head>
+<body>
+
+  <h1>Random Number Generator</h1>
+
+  <div id="number">0</div>
+
+  <button onclick="handleClick()">Click Me</button>
+
+  <script>
+    let clickCount = 0;
+    let interval;
+
+    function startChanging() {
+      interval = setInterval(() => {
+        document.getElementById("number").innerText =
+          Math.floor(Math.random() * 100);
+      }, 100);
+    }
+
+    function stopChanging() {
+      clearInterval(interval);
+    }
+
+    
+    startChanging();
+
+    function handleClick() {
+      clickCount++;
+
+      // Odd click → Stop
+      if (clickCount % 2 !== 0) {
+        stopChanging();
+      }
+
+    
+      else {
+        startChanging();
+      }
+    }
+  </script>
+
+</body>
+</html>
