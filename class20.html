@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Slider in Website</h1>
+        <section>
+            <img class="mySlides" src="https://i.natgeofe.com/k/5b396b5e-59e7-43a6-9448-708125549aa1/new-york-statue-of-liberty_2x1.jpg" style="height:500px; width:100%">
+            <img class="mySlides" src="https://storage.googleapis.com/clio-images/large_2920_E0Mhv5bVcAI6QDS.jpg" style="height:500px; width:100%">
+            <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2V2MEgfTeIAxvWIZCp-LuVIBRSvRt1fAhQ&s" style="height:500px; width:100%">
+            <img class="mySlides" src="https://portal-ccc.s3.amazonaws.com/media/images/uic/59/f18sj9m.jpg" style="height:500px; width:100%">
+        </section>
+        <script>
+            // Automatic Slideshow - change image every 3 seconds
+            var myIndex =0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x [i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x. length) {myIndex = 1}
+                x[myIndex-1].style.display = "block";
+                setTimeout(carousel, 3000);
+            }
+        </script>
+    </body>
+</html>
